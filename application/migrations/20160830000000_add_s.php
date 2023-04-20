@@ -3,10 +3,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * Class Migration_Add_news
+ * Class Migration_Add_s
  * @property CI_DB_forge $dbforge The DB Forge
  */
-class Migration_Add_news extends CI_Migration {
+class Migration_Add_s extends CI_Migration {
 
     public function up()
     {
@@ -18,24 +18,24 @@ class Migration_Add_news extends CI_Migration {
                 'auto_increment' => TRUE,
                 'null' => FALSE,
             ),
-            'title' => array(
+            'titleq' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '128',
                 'null' => FALSE,
             ),
-            'slug' => array(
+            'slugq' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '128',
                 'null' => FALSE,
             ),
-            'text' => array(
+            'textq' => array(
                 'type' => 'TEXT',
                 'null' => FALSE,
             ),
         ));
         $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->add_key('slug', FALSE);
-        $this->dbforge->create_table('news');
+        $this->dbforge->add_key('slugq', FALSE);
+        $this->dbforge->create_table('s');
     }
 
     public function down()
