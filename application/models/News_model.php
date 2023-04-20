@@ -33,12 +33,19 @@ class News_model extends CI_Model {
         $this->load->helper('url');
 
         $slug = url_title($title, 'dash', TRUE);
+        sleep(5);
+//        ваов
 
         $data = array(
             'title' => $title,
             'slug' => $slug,
             'text' => $text
         );
+//        $data = array(
+//            'title' => $title,
+//            'slug' => $slug,
+//            'text' => $text
+//        );
 
         return $this->db->insert('news', $data);
     }
